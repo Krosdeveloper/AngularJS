@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="miapp">
+    <head>
+        <meta charset="utf-8">
+        <title>Angular Js.</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script rel="text/javascript" src="/js/main.js"></script>
+    </head>
+    <body>
+
+        <div ng-controller="controlador1" ng-hide="true">
+            {{nombre}}
+        </div>
+
+        <div ng-controller="controlador2" ng-hide="true">
+            {{nombre}}
+        </div>
+
+        <div ng-controller="circunferencia" ng-hide="true">
+            <labe>Diámetro</label>
+                <input type="text" name="name" value="" ng-model="diametro">
+                <button type="button" name="button" ng-click="calcularCircunferencia()">Calcular circunferenca</button>
+                <br>
+                Circunferencia: {{circunferencia}}
+        </div>
+
+        <div ng-controller="nombres" ng-hide="true">
+            <h2>Nombres</h2>
+            <ul>
+                <li ng-repeat="singlename in nombres">{{singlename}}</li>
+            </ul>
+            <h2>Heroes de Accion</h2>
+            <ul>
+                <li ng-repeat="heroe in heroes">{{heroe.nombre}}, {{heroe.Apellido}}</li>
+            </ul>
+
+        </div>
+
+        <div ng-controller="buscador" ng-hide="true">
+            <h2>Buscador</h2>
+
+            <input type="search" ng-model="busqueda">
+            <p ng-repeat="entrada in db | filter: busqueda">
+                {{entrada.nombre}} : {{entrada.telefono}}
+            </p>
+
+        </div>
+    </body>
+</html>
